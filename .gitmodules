@@ -1,0 +1,30 @@
+[submodule "dependencies/osqp"]
+	path = dependencies/osqp
+	url = git@github.com:ka-raceing/osqp.git
+[submodule "dependencies/fmt"]
+	path = dependencies/fmt
+	url = git@github.com:ka-raceing/fmt.git
+[submodule "dependencies/qpmad"]
+	path = dependencies/qpmad
+	url = git@github.com:ka-raceing/qpmad.git
+[submodule "dependencies/rosparam_handler"]
+	path = dependencies/rosparam_handler
+	url = git@github.com:ka-raceing/rosparam_handler.git
+[submodule "dependencies/swig"]
+	path = dependencies/swig
+	url = git@github.com:ka-raceing/swig.git
+[submodule "dependencies/GSL"]
+	path = dependencies/GSL
+	url = git@github.com:ka-raceing/GSL.git
+[submodule "dependencies/casadi"]
+	path = dependencies/casadi
+	url = git@github.com:ka-raceing/casadi.git
+[submodule "dependencies/blasfeo"]
+	path = dependencies/blasfeo
+	url = git@github.com:ka-raceing/blasfeo.git
+[submodule "dependencies/hpipm"]
+	path = dependencies/hpipm
+	url = git@github.com:ka-raceing/hpipm.git
+[submodule "dependencies/g2o"]
+	path = dependencies/g2o
+	url = git@github.com:ka-raceing/g2o.git
