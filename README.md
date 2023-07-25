@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://ka-raceing.de"><img src="https://raw.githubusercontent.com/ka-raceing/ros-docker/main/misc/2_logostreifenbund.png" alt="KA-RaceIng" width="200"></a>
+  <a href="https://ka-raceing.de"><img src="https://raw.githubusercontent.com/ka-raceing/ros-docker/main/misc/2_logostreifenbunt.png" alt="KA-RaceIng" width="200"></a>
   <br>
   ROS-Docker
   <br>
