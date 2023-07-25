@@ -10,8 +10,9 @@
 
 <p align="center">
   <a href="#prerequisites">Prerequisites</a> •
-  <a href="#docker_usage">Docker Usage</a> •
-  <a href="#docker_compose_setup">Docker Compose Setup</a> •
+  <a href="#docker-usage">Docker Usage</a> •
+  <a href="#docker-compose-setup">Docker Compose Setup</a> •
+  <a href="#running-with-vscode">Running with VSCode</a> •
   <a href="#license">License</a>
 </p>
 
@@ -159,9 +160,37 @@ services:
     command: /bin/sh -c "while sleep 1000; do :; done"
 ```
 
-# Running with [VSCode](https://www.ka-raceing.de/)
-
-
+## Running with [VSCode](https://www.ka-raceing.de/)
+Using the [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) Plugin for VSCode enables you to create and work inside a Docker Container as if you were working on your own machine.
+An example for the required `.devcontainer.json` file would be
+```json
+{
+    "name": "ros-docker_container",
+    "service": "ros-docker",
+    "dockerComposeFile": "./docker-compose.yaml",
+    "workspaceFolder": "<path_to_the_ws_folder_inside_the_container>",
+    "shutdownAction": "stopCompose"
+}
+```
+Any Extensions that should be pre-installed can be installed at this point.
+We would recommend installing the [ROS](https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros) and [C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack) Plugins
+```json
+{
+    "name": "ros-docker_container",
+    "service": "ros-docker",
+    "dockerComposeFile": "./docker-compose.yaml",
+    "customizations": {
+            "vscode": {
+                "extensions": [
+                    "ms-iot.vscode-ros",
+                    "ms-vscode.cpptools-extension-pack"
+                ]
+            }
+        },
+    "workspaceFolder": "<path_to_the_ws_folder_inside_the_container>",
+    "shutdownAction": "stopCompose"
+}
+```
 ## License
 
 GNU GPL v3
