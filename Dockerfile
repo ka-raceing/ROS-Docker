@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install --install-recommends -y \
     libelf-dev \
     liblapack-dev \
     libqglviewer-dev-qt5 \
+    libspdlog-dev \
     libsuitesparse-dev \
     libtool \
     lld \
