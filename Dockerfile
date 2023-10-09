@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install --install-recommends -y \
     ccache \
     clang \
     clang-format \
+    clang-tidy \
     cmake \
     cppcheck \
     flex \
