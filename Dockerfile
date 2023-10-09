@@ -14,7 +14,10 @@ RUN apt-get update && apt-get install --install-recommends -y \
     bc \
     bison \
     ccache \
+    clang \
+    clang-format \
     cmake \
+    cppcheck \
     flex \
     g++ \
     gcc \
@@ -35,7 +38,8 @@ RUN apt-get update && apt-get install --install-recommends -y \
     qtdeclarative5-dev \
     sl \
     software-properties-common \
-    texinfo
+    texinfo \
+    vim 
 
 
 # add system76 package archive
