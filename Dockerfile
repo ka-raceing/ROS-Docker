@@ -30,6 +30,8 @@ RUN apt-get update && apt-get install --install-recommends -y \
     libspdlog-dev \
     libsuitesparse-dev \
     libtool \
+    libpcap-dev \
+    libyaml-cpp-dev \
     lld \
     m4 \
     make \
