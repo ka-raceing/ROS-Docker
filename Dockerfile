@@ -42,7 +42,8 @@ RUN apt-get update && apt-get install --install-recommends -y \
     sl \
     software-properties-common \
     texinfo \
-    vim 
+    vim \
+    bash-completion
 
 
 # add system76 package archive
