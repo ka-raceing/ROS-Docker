@@ -116,8 +116,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source ~/.config/alias/alias
-. "$HOME/.cargo/env"
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 source /opt/ros/noetic/setup.bash
