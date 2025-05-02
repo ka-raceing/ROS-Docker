@@ -162,8 +162,7 @@ RUN apt-get update && apt-get install --install-recommends -y \
 #--------------------------------------------------
 # post installation steps
 #--------------------------------------------------
-# source setup.bash via bashrc
-RUN echo "source /opt/ros/noetic/setup.bash" >> /root/.bashrc
+COPY .bashrc /root/.bashrc
 
 #remove /opt/ros/noetic/include/fmt
 RUN rm -rf /opt/ros/noetic/include/fmt
