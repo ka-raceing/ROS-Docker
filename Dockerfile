@@ -81,7 +81,8 @@ WORKDIR /tmp/rosparam_handler_ws
 RUN . /opt/ros/noetic/setup.sh \ 
     && catkin_make -DCMAKE_INSTALL_PREFIX=/opt/ros/noetic/
 WORKDIR /tmp/rosparam_handler_ws/build
-RUN make install
+RUN . /opt/ros/noetic/setup.sh \ 
+    && make install
 
 #--------------------------------------------------
 # control dependencies
