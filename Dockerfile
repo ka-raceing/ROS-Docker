@@ -61,6 +61,14 @@ WORKDIR /tmp/osqp/build
 RUN cmake -G "Unix Makefiles" ..
 RUN cmake --build . --target install
 
+#osqp-eigen
+COPY dependencies/osqp-eigen /tmp/osqp-eigen
+RUN mkdir /tmp/osqp-eigen/build
+WORKDIR /tmp/osqp-eigen/build
+RUN cmake -G "Unix Makefiles" ..
+RUN make
+RUN make install
+
 #fmt
 COPY dependencies/fmt /tmp/fmt
 RUN mkdir /tmp/fmt/build

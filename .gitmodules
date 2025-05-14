@@ -28,3 +28,6 @@
 [submodule "dependencies/g2o"]
 	path = dependencies/g2o
 	url = git@github.com:ka-raceing/g2o.git
+[submodule "dependencies/osqp-eigen"]
+	path = dependencies/osqp-eigen
+	url = git@github.com:ka-raceing/osqp-eigen.git
