@@ -1,0 +1,112 @@
+#!/bin/bash
+#s script eases the bag malnipulation process.
+
+## Topics names
+declare -a OUT_LIDAR=(
+    "/perception/lidar/cones"
+    "/perception/lidar/points/groundfiltered"
+    "/perception/lidar/points/ground"
+    "/perception/lidar/points/cluster_centroids"
+    "/perception/lidar/points/undistorted"
+    "/perception/cluster_vis"
+    
+    "/lidar/cones"
+    "/lidar/points/groundfiltered"
+    "/lidar/points/ground"
+    "/lidar/points/cluster_centroids"
+    "/lidar/points/undistorted"
+    "/cluster_vis"
+)
+
+declare -a OUT_CAMERA=(
+    "/perception/camera/cones_filtered"
+    "/perception/camera/left/projection_debug"
+    "/perception/camera/center/projection_debug"
+    "/perception/camera/right/projection_debug"
+)
+
+declare -a OUT_SLAM=(
+    "/slam/laps_completed"
+    "/slam/map"
+    "/slam/optimize"
+    "/slam/perception_benchmark/false_negatives"
+    "/slam/perception_benchmark/false_positives"
+    "/slam/vehicle_state"
+    "/slam_benchmark/cpu_usage"
+    "/slam_benchmark/run_time/observations"
+    "/slam_benchmark/run_time/optimization"
+    "/viz/slam/data_association"
+    "/viz/slam/finish_line"
+    "/viz/slam/laps_completed"
+    "/viz/slam/matched_cones"
+    "/viz/slam/matching_ratio"
+    "/viz/slam/moving_matching_ratio"
+    "/viz/slam/num_matched_cones"
+    "/viz/slam/num_observations"
+    "/viz/slam/path_corrected"
+    "/viz/slam/path_odometry"
+    "/viz/slam/pose"
+    "/viz/slam/unmatched_cones"
+    "/viz/slam/v_x"
+)
+
+declare -a OUT_TRAJECTORY=(
+    "/trajectory/middle_line"
+    "/trajectory/left_boundary"
+    "/trajectory/right_boundary"
+    "/trajectory/race_line"
+    "/trajectory/optimized_track"
+    "/trajectory/visuals"
+    "/trajectory/prepped_track"
+    "/trajectory/visualization/race_line"
+    "/trajectory/visualization/middle_line"
+    "/trajectory/visualization/transition_spline"
+    "/trajectory/optimized_track"
+    "/trajectory/viz/new_middle_line"
+    "/trajectory/viz/triangles"
+    "/middleline_node/parameter_descriptions"
+    "/middleline_node/parameter_updates"
+    
+    "/trajectory/middleline"
+    "/trajectory/raceline"
+    "/trajectory/optimized_track"
+    "/trajectory/visuals"
+    "/viz/trajectory/raceline"
+    "/viz/trajectory/middleline"
+    "/viz/trajectory/triangles"
+)
+
+declare -a OUT_CONTROLLER=(
+    "/controller/torque_request"
+    "/controller/steering_request"
+    "/viz/controller/mpc_prediction"
+    "/viz/controller/target_trajectory"
+    "/viz/controller/line_to_closet_path_point"
+)
+
+declare -a OUT_SUPERVISOR=(
+    "/supervisor/preload_map"
+)
+
+COMMAND="rosbag play "
+
+for argument in "$@"
+do
+
+        COMMAND="${COMMAND} ${argument}"
+        shift
+        if [[  $argument =~ ".bag" ]]; then
+                break
+        fi
+done
+
+for stage in "$@"
+do
+    OUT_STAGE_NAME="OUT_${stage^^}[@]"
+    OUT_STAGE=("${!OUT_STAGE_NAME}")
+    for topic in "${OUT_STAGE[@]}"; do
+        MAPPING="${topic}:=/dumpster_topic/${topic}"
+        COMMAND="${COMMAND} ${MAPPING}"
+    done
+done
+eval $COMMAND

@@ -173,9 +173,10 @@ RUN apt-get update && apt-get install --install-recommends -y \
 # post installation steps
 #--------------------------------------------------
 COPY .bashrc /root/.bashrc
+COPY bagger /usr/local/bin
 
-#remove /opt/ros/noetic/include/fmt
-RUN rm -rf /opt/ros/noetic/include/fmt
+#remove /opt/ros/noetic/include/fmt because we're using a different version of fmt than ROS
+RUN rm -rf /opt/ros/noetic/include/fmt 
 
 # set working directory and shell
 WORKDIR /
