@@ -32,7 +32,7 @@ alias lgrass="moped; roslaunch slam_pkg grass_slam_node.launch rviz:=true"
 alias lml='moped; roslaunch trajectory_pkg middleline_node.launch'
 alias lskidpad='moped; roslaunch simulation skidpad.launch'
 
-alias rviz-slam='moped; rosrun rviz rviz -d ~/${MOPED_REPO_NAME}/moped_ws/src/slam_ws/src/slam_pkg/rviz/slam.rviz'
+alias rviz-slam='moped; rviz -d ~/${MOPED_REPO_NAME}/moped_ws/src/slam_ws/src/slam_pkg/rviz/slam.rviz'
 alias rviz-ml='moped; rviz -d src/trajectory_ws/src/trajectory_pkg/rviz/middleline.rviz'
 alias rviz-vel='moped; rviz -d src/trajectory_ws/src/trajectory/rviz/velocity.rviz'
 alias rviz-transitionspline='moped; rviz -d src/trajectory_ws/src/trajectory_pkg/rviz/transition_spline_debug.rviz'
