@@ -173,6 +173,7 @@ RUN apt-get update && apt-get install --install-recommends -y \
 # post installation steps
 #--------------------------------------------------
 COPY .bashrc /root/.bashrc
+COPY .bash_aliases_docker /root/.bash_aliases_docker
 COPY bagger /usr/local/bin
 
 #remove /opt/ros/noetic/include/fmt because we're using a different version of fmt than ROS
