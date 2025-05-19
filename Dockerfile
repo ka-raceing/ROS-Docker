@@ -45,6 +45,10 @@ RUN apt-get update && apt-get install --install-recommends -y \
     vim \
     bash-completion
 
+# Install fzf, fuzzy find tool for commandline
+RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf \
+    && ~/.fzf/install
+
 
 # add system76 package archive
 RUN apt-add-repository -ys ppa:system76-dev/stable \
