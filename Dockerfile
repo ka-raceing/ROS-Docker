@@ -43,7 +43,9 @@ RUN apt-get update && apt-get install --install-recommends -y \
     software-properties-common \
     texinfo \
     vim \
-    bash-completion
+    bash-completion \
+    curl \
+    wget
 
 # Install fzf, fuzzy find tool for commandline
 RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf \
